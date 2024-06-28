@@ -1,20 +1,19 @@
-import React from "react";
+import { View, Text, FlatList } from "react-native";
 import { useFetchPokemonList } from "../hooks/PokeApi";
 
 const HomeScreen: React.FC = () => {
   const { pokemonList, loading } = useFetchPokemonList();
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Text>Loading...</Text>;
 
   return (
-    <div>
-      <h1>Pokedex</h1>
-      <ul>
-        {pokemonList.map((pokemon) => (
-          <li key={pokemon.name}>{pokemon.name}</li>
-        ))}
-      </ul>
-    </div>
+    <View>
+      <Text>Pokedex</Text>
+      <FlatList
+        data={pokemonList}
+        renderItem={({ item }) => <Text key={item.name}>{item.name}</Text>}
+      />
+    </View>
   );
 };
 

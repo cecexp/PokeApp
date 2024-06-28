@@ -1,8 +1,8 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "./screens/HomeScreen";
-import PokeDetails from "./screens/PokeDetails";
+import HomeScreen from "../screens/HomeScreen";
+import PokeDetails from "../screens/PokeDetails";
 
 const Stack = createStackNavigator();
 
